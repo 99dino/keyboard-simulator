@@ -126,3 +126,13 @@ document.addEventListener("keyup", (e) => {
   const audio = document.querySelector(`audio[data-key="${e.code}R"]`);
   audio.play();
 });
+
+// On Mouse Click visual and audio effect
+document.querySelectorAll(".btn-in").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const audio = document.querySelector(
+      `audio[data-key="${btn.classList[0]}"]`
+    );
+    audio.play();
+  });
+});
