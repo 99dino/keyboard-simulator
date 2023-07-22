@@ -13,8 +13,17 @@
     />
   </head>
   <body>
-    <div class="keyboard">
-      <div class="center">
+    <div class="upper center">
+      <textarea class="input_area" oninput="processCurrentText()"> </textarea>
+      <div class="start">
+        <div class="start_text middle">Click here to start</div>
+      </div>
+      <div class="typing_area modal"></div>
+    </div>
+    <hr />
+    <hr />
+    <div class="outer center">
+      <div class="inner middle">
         <div class="row row-0">
           <div class="btn-out var1out">
             <div class="row0 btn-in var1in Escape-">

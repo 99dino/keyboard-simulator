@@ -1,4 +1,5 @@
 * {
+  cursor: default;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -6,17 +7,28 @@
   font-family: "Lexend Deca", sans-serif;
 }
 
-.keyboard {
+.outer {
+  /* display: none; */
   cursor: default;
   color: black;
   background: linear-gradient(137deg, #b6bab9 0%, #b2b2b2 75%);
-  margin: 0 auto;
   width: 1020px;
   height: 380px;
-  position: relative;
   border-radius: 10px;
+  border: 2px solid red;
+  position: relative;
 }
+
+.inner {
+  /* background-color: yellow; */
+  width: 1000px;
+}
+
 .center {
+  margin: 0 auto;
+}
+
+.middle {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -25,6 +37,7 @@
 
 .row {
   display: flex;
+
   width: 1000px;
 }
 
@@ -81,4 +94,68 @@
 
 .active-class {
   background-color: inherit;
+}
+
+.upper {
+  margin-top: 10px;
+  position: relative;
+  width: 1000px;
+  height: 150px;
+  border: 2px solid green;
+}
+
+.start {
+  position: absolute;
+  z-index: 1;
+  width: 1000px;
+  height: 150px;
+  text-align: center;
+}
+
+.start_text {
+  font-size: 32px;
+}
+
+.modal {
+  filter: blur(5px);
+}
+
+.input_area {
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+  display: block;
+  width: 1000px;
+  height: 150px;
+}
+
+.typing_area {
+  background-color: #48494b;
+  position: relative;
+  z-index: -1;
+  margin: 0 auto;
+  padding: 10px 20px;
+  width: 950px;
+  height: 150px;
+  text-align: justify;
+  font-size: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.correct_char {
+  color: #79a617;
+  /* animation: color-change 10s linear infinite; */
+  /* animation: rgb 5s linear infinite; */
+}
+
+.no {
+  color: #eee;
+}
+
+.incorrect_char {
+  color: red;
+  text-decoration: underline;
 }
