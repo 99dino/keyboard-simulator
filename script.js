@@ -1,4 +1,5 @@
 // Key Pressing Sound Effect
+// to handle key events
 const rows = [
   [
     "Escape",
@@ -90,9 +91,13 @@ const rows = [
     "ArrowRight",
   ],
 ];
+
 // On Key Down visual and audio effect
 document.addEventListener("keydown", (e) => {
   if (!e.repeat) {
+    if (e.code === "Escape") {
+      finishGame();
+    }
     const btn = document.querySelector(`.${e.code}-`);
     if (btn) {
       btn.classList.add("active-class");
@@ -114,17 +119,21 @@ document.addEventListener("keydown", (e) => {
 // on Key Up visual and audio effect
 document.addEventListener("keyup", (e) => {
   const btn = document.querySelector(`.${e.code}-`);
-  btn.classList.remove("active-class");
+  if (btn) {
+    btn.classList.remove("active-class");
 
-  for (let i = 0; i < 6; ++i) {
-    if (rows[i].includes(e.code)) {
-      const audio = document.querySelector(`audio[data-key="rowR"]`);
+    for (let i = 0; i < 6; ++i) {
+      if (rows[i].includes(e.code)) {
+        const audio = document.querySelector(`audio[data-key="rowR"]`);
+        audio.play();
+        return;
+      }
+    }
+    const audio = document.querySelector(`audio[data-key="${e.code}R"]`);
+    if (audio) {
       audio.play();
-      return;
     }
   }
-  const audio = document.querySelector(`audio[data-key="${e.code}R"]`);
-  audio.play();
 });
 
 // On Mouse Click visual and audio effect
