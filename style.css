@@ -13,7 +13,7 @@ body {
   height: 100%;
 }
 
-.outer {
+.WKL-TKL-9009outer {
   /* display: none; */
   cursor: default;
   color: black;
@@ -25,12 +25,36 @@ body {
   position: relative;
 }
 
-.inner {
+.WKL-TKL-9009inner {
   /* background-color: #262626; */
   width: 1000px;
 }
-.inner p {
+.WKL-TKL-9009inner p {
   color: black;
+}
+
+.MoDo-WKL-TKLouter {
+  /* display: none; */
+  cursor: default;
+  color: white;
+  background: linear-gradient(
+    137deg,
+    rgb(182, 186, 185) 0%,
+    rgb(178, 178, 178) 75%
+  );
+  width: 1020px;
+  height: 380px;
+  border-radius: 10px;
+  /* border: 2px solid red; */
+  position: relative;
+}
+
+.Modo-WKL-TKLinner {
+  /* background-color: #262626; */
+  width: 1000px;
+}
+.Modo-WKL-TKLinner p {
+  color: #eee;
 }
 
 .center {
@@ -86,6 +110,31 @@ body {
 
 .var2in {
   background-color: #f3ecdf;
+}
+
+/* keyboard 2 */
+.var3out {
+  background-color: #515459;
+}
+
+.var3in {
+  background-color: #595c61;
+}
+
+.var4out {
+  background-color: #82878d;
+}
+
+.var4in {
+  background-color: #8f949b;
+}
+
+.var5out {
+  background-color: #d36a7b;
+}
+
+.var5in {
+  background-color: #e87487;
 }
 
 .btn-in:hover {

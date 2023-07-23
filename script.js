@@ -936,6 +936,7 @@ document.querySelector(".mute").addEventListener("click", () => {
 const switches = document.querySelector(".switch");
 const layouts = document.querySelector(".layout");
 let curr = "NovelKeys-Creams";
+let currl = "WKL-TKL-9009outer";
 
 switches.addEventListener("change", () => {
   const audiotype = document.querySelectorAll("audio");
@@ -944,4 +945,10 @@ switches.addEventListener("change", () => {
     btn.src = btn.src.replace(`${curr}`, switches.value);
   });
   curr = switches.value;
+});
+
+layouts.addEventListener("change", () => {
+  document.querySelector(`.${currl}`).classList.add("hidden");
+  currl = layouts.value;
+  document.querySelector(`.${currl}`).classList.remove("hidden");
 });
