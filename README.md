@@ -6,4 +6,4 @@ Currently, it supports single switch and keyboard layouts, and colors for an cus
 - Unique sounds for specific keys
 - 1 minute English typing test
 - Wide selection of case colors and layouts
-- (Dark mode) to be implemented soon 
+- (Dark mode) - to be implemented soon 
