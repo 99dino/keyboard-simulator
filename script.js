@@ -556,68 +556,68 @@ const medium = [
 ];
 // array containing hard words
 const hard = [
-  "Abnegation",
-  "Aggrandize",
-  "Alacrity",
+  "Abnegation,",
+  "Aggr'andize",
+  "Alacr;ity",
   "Anachronistic",
-  "Archetypal",
+  "Arche;typal",
   "Ascetic",
   "Beguile",
-  "Blandishment",
+  "Blandi'shment",
   "Cajole",
   "Callous",
   "Camaraderie",
-  "Circumlocution",
+  "Cir[cum]locution",
   "Clamour",
   "Cognizant",
-  "Construe",
+  "Cons@true",
   "Convivial",
   "Demagogue",
-  "Denigrate",
+  "Deni&grate",
   "Didactic",
   "Disparate",
-  "Eclectic",
+  "Eclectic,",
   "Egregious",
   "Embezzlement",
   "Enervate",
   "Ephemeral",
   "Equanimity",
-  "Fatuous",
+  "Fat'uous",
   "Gratuitous",
-  "Iconoclast",
-  "Idiosyncratic",
-  "Incumbent",
+  "Icon:oclast",
+  "Idiosyn 1023 cratic",
+  "Incumbent;",
   "Inveterate",
   "Libertarian",
   "Licentious",
   "Largess",
   "Multifarious",
   "Obdurate",
-  "Ostracism",
+  "Ost!1racism!",
   "Pejorative",
-  "Pertinacious",
-  "Phlegmatic",
-  "Promulgate",
+  "Pertina 534 cious",
+  "Phlegma;tic",
+  "Promulg'ate",
   "Quotidian",
-  "Recalcitrant",
-  "Sanctimonious",
+  "Recal{citrant}",
+  "Sancti(mon)ious",
   "Solipsism",
-  "Travesty",
-  "Ubiquitous",
-  "Vicissitude",
-  "Vociferous",
-  "Abject",
-  "Abscond",
-  "Bereft",
-  "Capitulate",
-  "Umbrage",
+  "Travest;y",
+  "Ubiquit'ous.",
+  "Vicissitude,",
+  "Voci 9845 ferous'",
+  "Abject/12",
+  "Abscond3",
+  "Bereft53",
+  "Capitu 545 late",
+  "Umbr:age",
   "Emollient",
   "Dirge",
   "Dispel",
   "Epistolary",
   "Epistolary",
   "Exacerbate",
-  "Forbearance",
+  "Forbearance,",
   "Gourmand",
   "Heterogeneous",
   "Impecunious",
@@ -626,44 +626,44 @@ const hard = [
   "Protean",
   "Spurious",
   "Milieu",
-  "Smaragdine",
+  "Smaragdine.",
   "Soubrette",
   "Albumen",
   "Eudaemonic",
   "Chiaroscurist",
   "Autochthonous",
   "Insouciant",
-  "Staphylococci",
+  "Staphy,lococci",
   "Foulard",
   "Conscientious",
   "Mlechchha",
   "Woebegoneness",
   "Milquetoast",
-  "Eudaemonic",
+  "Eudae 7892 monic",
   "Chauffeur",
-  "Staphylococci",
+  "Staphylococci.",
   "Cymotrichous",
-  "Paraphernalia",
+  "Para:phernalia",
   "Crystallographer",
   "Pince-nez",
-  "Crustaceology",
-  "Odontalgia",
+  "Crustace'ology",
+  "Odontalgia.",
   "Surveillance",
-  "Idiosyncrasy",
+  "Idiosync;rasy",
   "Acquiesce",
   "Feldenkrais",
-  "Neutercane",
+  "Neuter 7657 cane",
   "Xenarthra",
   "Wednesday",
-  "Bologna",
-  "Playwright",
+  "Bologna.",
+  "Playw 982 right",
   "Minuscule",
-  "Sacrilegious",
+  "Sacrile#@$gious",
   "Psoriasis",
-  "Narcissistic",
-  "Entrepreneur",
-  "Lightning",
-  "Handkerchief",
+  "Narcis'sistic",
+  "En-tre-pre-neur",
+  "Light432ning",
+  "Hand,kerchief",
 ];
 
 // selecting required elements
@@ -697,6 +697,9 @@ let timer = null;
 let running = 0;
 let mute = 0;
 
+// const fontSize = [12, 18, 24, 30];
+// let fontno = 1;
+
 document.querySelector(".start").addEventListener("click", () => {
   document.querySelector(".typing_area").classList.remove("blur");
   document.querySelector(".start").classList.add("hidden");
@@ -706,7 +709,7 @@ document.querySelector(".start").addEventListener("click", () => {
 const display = () => {
   current_para.split("").forEach((char) => {
     const charSpan = document.createElement("span");
-    charSpan.style.fontSize = "24px";
+    charSpan.style.fontSize = `inherit`;
     charSpan.style.fontWeight = "400";
     charSpan.style.fontFamily = "'Lexend Deca', sans-serif";
     charSpan.classList.add("no");
@@ -779,10 +782,10 @@ function processCurrentText() {
     }
     // incorrect character
     else {
-      //   if (char.innerText === " ") {
-      //     total_errors++;
-      //     input_area.value = input_area.value.slice(0, -1);
-      //   }
+      if (char.innerText === " ") {
+        total_errors++;
+        input_area.value = input_area.value.slice(0, -1);
+      }
       char.classList.remove("no");
       char.classList.add("incorrect_char");
       char.classList.remove("correct_char");
@@ -790,14 +793,8 @@ function processCurrentText() {
       errors++;
     }
   });
-
   // display the number of errors
   // update accuracy text
-  let correctCharacters = Math.max(characterTyped - (total_errors + errors), 0);
-  error_text.textContent = total_errors + errors;
-  correct_text.textContent = correctCharacters;
-  let accuracyVal = (correctCharacters / characterTyped) * 100;
-  accuracy_text.textContent = accuracyVal.toFixed(2);
   // if current text is completely typed
   // irrespective of errors
   if (curr_input.length == current_para.length) {
@@ -827,7 +824,6 @@ function startGame() {
 function resetValues() {
   // random paragraph generation
   updaterandompara();
-
   running = 0;
   timeElapsed = 0;
   errors = 0;
@@ -841,7 +837,6 @@ function resetValues() {
   timer_text.textContent = timeLeft + "s";
   error_text.textContent = 0;
   correct_text.textContent = 0;
-
   // these info will be hidden at the begining
   error_group.style.display = "none";
   accuracy_group.style.display = "none";
@@ -870,39 +865,41 @@ function updateTimer() {
 }
 
 function finishGame() {
-  if (running) {
-    // stop the timer
-    clearInterval(timer);
-    // disable the input area
-    input_area.disabled = true;
-    // time spent typing
-    // same as selected and different when someone ends it manually
-    timer_text.textContent = `${TIME_LIMIT[timeoption % 5] - timeLeft}`;
+  // stop the timer
+  clearInterval(timer);
+  // disable the input area
+  input_area.disabled = true;
+  // time spent typing
+  // same as selected and different when someone ends it manually
+  timer_text.textContent = `${TIME_LIMIT[timeoption % 5] - timeLeft}`;
+  // calculate cpm and wpm
+  cpm = Math.round(
+    ((characterTyped - total_errors - errors) / timeElapsed) * 60
+  );
+  wpm = Math.round(
+    ((characterTyped - total_errors - errors) / 5 / timeElapsed) * 60
+  );
+  // update cpm and wpm text
+  cpm = Number.isFinite(cpm) && cpm > 0 ? cpm : 0;
+  wpm = Number.isFinite(wpm) && wpm > 0 ? wpm : 0;
 
-    // display restart button
-    //   restart_btn.style.display = "block";
+  cpm_text.textContent = cpm;
+  wpm_text.textContent = wpm;
 
-    // calculate cpm and wpm
-    cpm = Math.round(
-      ((characterTyped - total_errors - errors) / timeElapsed) * 60
-    );
-    wpm = Math.round(
-      ((characterTyped - total_errors - errors) / 5 / timeElapsed) * 60
-    );
+  let correctCharacters = Math.max(characterTyped - (total_errors + errors), 0);
+  error_text.textContent = total_errors + errors;
+  correct_text.textContent = correctCharacters;
+  let accuracyVal = (correctCharacters / characterTyped) * 100;
+  accuracy_text.textContent = accuracyVal.toFixed(2);
 
-    // update cpm and wpm text
-    cpm_text.textContent = cpm;
-    wpm_text.textContent = wpm;
-
-    // display the error, accuracy cpm and wpm
-    end.style.display = "none";
-    error_group.style.display = "block";
-    accuracy_group.style.display = "block";
-    cpm_group.style.display = "block";
-    wpm_group.style.display = "block";
-    document.querySelector(".typing_area").classList.add("blur");
-    document.querySelector(".start").classList.remove("hidden");
-  }
+  // display the error, accuracy cpm and wpm
+  end.style.display = "none";
+  error_group.style.display = "block";
+  accuracy_group.style.display = "block";
+  cpm_group.style.display = "block";
+  wpm_group.style.display = "block";
+  document.querySelector(".typing_area").classList.add("blur");
+  document.querySelector(".start").classList.remove("hidden");
 }
 
 // selecting the timing option

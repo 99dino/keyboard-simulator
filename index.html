@@ -22,638 +22,678 @@
     </style>
   </head>
   <body>
-    <header class="center header">
-      <div class="icon">
-        <svg
-          width="64px"
-          height="64px"
-          viewBox="-2.4 -2.4 28.80 28.80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          transform="rotate(0)"
-          stroke="#ffffff"
-        >
-          <g
-            id="SVGRepo_bgCarrier"
-            stroke-width="0"
-            transform="translate(0,0), scale(1)"
+    <div class="container">
+      <header class="center header">
+        <div class="icon">
+          <svg
+            width="64px"
+            height="64px"
+            viewBox="-2.4 -2.4 28.80 28.80"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            transform="rotate(0)"
+            stroke="#ffffff"
           >
-            <rect
-              x="-2.4"
-              y="-2.4"
-              width="28.80"
-              height="28.80"
-              rx="14.4"
-              fill="#7ed0ec"
-              strokewidth="0"
-            ></rect>
-          </g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke="#CCCCCC"
-            stroke-width="0.672"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <g id="System / Keyboard">
+            <g
+              id="SVGRepo_bgCarrier"
+              stroke-width="0"
+              transform="translate(0,0), scale(1)"
+            >
+              <rect
+                x="-2.4"
+                y="-2.4"
+                width="28.80"
+                height="28.80"
+                rx="14.4"
+                fill="#FFC107"
+                strokewidth="0"
+              ></rect>
+            </g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke="#CCCCCC"
+              stroke-width="0.672"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <g id="System / Keyboard">
+                <path
+                  id="Vector"
+                  d="M18 15H19M9 15H15M6 15H5M5 12H19M5 9H19M2 14.8002V9.2002C2 8.08009 2 7.51962 2.21799 7.0918C2.40973 6.71547 2.71547 6.40973 3.0918 6.21799C3.51962 6 4.08009 6 5.2002 6H18.8002C19.9203 6 20.4796 6 20.9074 6.21799C21.2837 6.40973 21.5905 6.71547 21.7822 7.0918C22 7.5192 22 8.07899 22 9.19691V14.8031C22 15.921 22 16.48 21.7822 16.9074C21.5905 17.2837 21.2837 17.5905 20.9074 17.7822C20.48 18 19.921 18 18.8031 18H5.19691C4.07899 18 3.5192 18 3.0918 17.7822C2.71547 17.5905 2.40973 17.2837 2.21799 16.9074C2 16.4796 2 15.9203 2 14.8002Z"
+                  stroke="#023047"
+                  stroke-width="0.8640000000000001"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="heading">
+          <p class="value">keyboard</p>
+          <p class="value">simulator</p>
+        </div>
+        <div class="stats center">
+          <div class="timer final">
+            <div class="curr_time value" title="Timer">15s</div>
+            <div class="header_text feature">Time</div>
+          </div>
+          <div class="difficulty final">
+            <div class="difficulty_value value">Easy</div>
+            <div class="difficulty_text feature">Difficulty</div>
+          </div>
+          <div class="accuracy final" title="Accuracy">
+            <div class="curr_accuracy value">43.3</div>
+            <div class="accuracy_text feature">Accuracy</div>
+          </div>
+          <div class="wpm final" title="Word Per Minute">
+            <div class="wpm_value value">43.3</div>
+            <div class="header_text feature">WPM</div>
+          </div>
+          <div class="cpm final" title="Character Per Minute">
+            <div class="cpm_value value">43.3</div>
+            <div class="header_text feature">CPM</div>
+          </div>
+          <div class="keystrokes final">
+            <div class="keystroke value">
+              <span
+                class="curr_corrects correct_char value"
+                title="Correct Strokes"
+                >a</span
+              >
+              |
+              <span
+                class="curr_errors incorrect_char value"
+                title="Incorrect Strokes"
+                >b</span
+              >
+            </div>
+            <div class="header_text feature">keystroke</div>
+          </div>
+          <div class="end">
+            <button class="end_btn" onclick="finishGame()">
+              <div class="value final">End</div>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="upper center">
+        <textarea class="input_area" oninput="processCurrentText()"> </textarea>
+        <div class="start">
+          <div class="start_text middle">
+            Click here to focus and start typing
+          </div>
+        </div>
+        <div class="typing_area blur"></div>
+      </div>
+
+      <div class="customize center">
+        <div class="content">
+          <select class="option_style down" aria-label="Switch Type">
+            <option value="0" selected>NovelKeys Creams</option>
+            <option value="1">Holy Pandas</option>
+            <option value="2">Alpacas</option>
+            <option value="3">Turquoise Tealios</option>
+            <option value="4">Gateron Black Inks</option>
+            <option value="5">Gateron Red Inks</option>
+            <option value="6">Cherry MX Blacks</option>
+            <option value="7">Cherry MX Browns</option>
+            <option value="8">Cherry MX Blues</option>
+            <option value="9">Kailh Box Navies</option>
+            <option value="10">Buckling Spring</option>
+            <option value="11">SKCM Blue Alps</option>
+            <option value="12">Topre</option>
+          </select>
+        </div>
+
+        <div class="content">
+          <select class="option_style down" aria-label="Keyboard Layout">
+            <option value="0" selected>9009 WKL TKL</option>
+            <option value="1">Oblivion Fullsize</option>
+            <option value="2">Mizu KBD19X</option>
+            <option value="3">MoDo WKL TKL</option>
+            <option value="4">Dracula TKL</option>
+            <option value="5">Laser 75%</option>
+            <option value="6">Olivia WKL 75%</option>
+            <option value="7">Cafe 65%</option>
+            <option value="8">8008 WKL 65%</option>
+            <option value="9">Model M</option>
+            <option value="10">Handarbeit WKL Fullsize</option>
+            <option value="11">HHKB</option>
+          </select>
+        </div>
+        <div class="content">
+          <div class="option_style mute">Mute</div>
+        </div>
+      </div>
+
+      <div class="outer center">
+        <div class="inner middle">
+          <div class="row row-0">
+            <div class="btn-out var1out">
+              <div class="row0 btn-in var1in Escape-">
+                <p>Esc</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var2out" style="margin-left: 54px">
+              <div class="row0 btn-in var2in F1-">
+                <p>F1</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row0 btn-in var2in F2-">
+                <p>F2</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row0 btn-in var2in F3-">
+                <p>F3</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row0 btn-in var2in F4-">
+                <p>F4</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var1out" style="margin-left: 36px">
+              <div class="row0 btn-in var1in F5-">
+                <p>F5</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var1out">
+              <div class="row0 btn-in var1in F6-">
+                <p>F6</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var1out">
+              <div class="row0 btn-in var1in F7-">
+                <p>F7</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var1out">
+              <div class="row0 btn-in var1in F8-">
+                <p>F8</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var2out" style="margin-left: 36px">
+              <div class="row0 btn-in var2in F9-">
+                <p>F9</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row0 btn-in var2in F10-">
+                <p>F10</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row0 btn-in var2in F11-">
+                <p>F11</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row0 btn-in var2in F12-">
+                <p>F12</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var1out" style="margin-left: 10px">
+              <div class="row0 btn-in var1in">
+                <p>PrtSc</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row0 btn-in var2in">
+                <p style="text-align: center">Scroll Lock</p>
+                <!-- <p>`</p> -->
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row0 btn-in var2in">
+                <p>Pause</p>
+                <p>Break</p>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row row-1">
+            <div class="btn-out var2out">
+              <div class="row1 btn-in var2in Backquote-">
+                <p>~</p>
+                <p>`</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row1 btn-in var2in Digit1-">
+                <p>!</p>
+                <p>1</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row1 btn-in var2in Digit2-">
+                <p>@</p>
+                <p>2</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row1 btn-in var2in Digit3-">
+                <p>#</p>
+                <p>3</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row1 btn-in var2in Digit4-">
+                <p>$</p>
+                <p>4</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row1 btn-in var2in Digit5-">
+                <p>%</p>
+                <p>5</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row1 btn-in var2in Digit6-">
+                <p>^</p>
+                <p>6</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row1 btn-in var2in Digit7-">
+                <p>&</p>
+                <p>7</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row1 btn-in var2in Digit8-">
+                <p>*</p>
+                <p>8</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row1 btn-in var2in Digit9-">
+                <p>(</p>
+                <p>9</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row1 btn-in var2in Digit0-">
+                <p>)</p>
+                <p>0</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row1 btn-in var2in Minus-">
+                <p>_</p>
+                <p>-</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row1 btn-in var2in Equal-">
+                <p>+</p>
+                <p>=</p>
+              </div>
+            </div>
+            <div class="btn-out var1out" style="flex-grow: 1">
+              <div class="Backspace btn-in var1in Backspace-">
+                <p>Backspace</p>
+              </div>
+            </div>
+            <div class="btn-out var1out" style="margin-left: 10px">
+              <div class="row1 btn-in var1in Insert-">
+                <p>Insert</p>
+              </div>
+            </div>
+            <div class="btn-out var1out">
+              <div class="row1 btn-in var1in Numpad7-">
+                <p>Home</p>
+              </div>
+            </div>
+            <div class="btn-out var1out">
+              <div class="row1 btn-in var1in PageUp-">
+                <p>PgUp</p>
+              </div>
+            </div>
+          </div>
+          <div class="row row-2">
+            <div class="btn-out var1out" style="flex-grow: 0.8">
+              <div class="row2 btn-in var1in Tab-">
+                <p>Tab</p>
+                <!-- <p>2</p> -->
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row2 btn-in var2in KeyQ-">
+                <p>Q</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row2 btn-in var2in KeyW-">
+                <p>W</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row2 btn-in var2in KeyE-">
+                <p>E</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row2 btn-in var2in KeyR-">
+                <p>R</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row2 btn-in var2in KeyT-">
+                <p>T</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row2 btn-in var2in KeyY-">
+                <p>Y</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row2 btn-in var2in KeyU-">
+                <p>U</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row2 btn-in var2in KeyI-">
+                <p>I</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row2 btn-in var2in KeyO-">
+                <p>O</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row2 btn-in var2in KeyP-">
+                <p>P</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row2 btn-in var2in BracketLeft-">
+                <p>{</p>
+                <p>[</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row2 btn-in var2in BracketRight-">
+                <p>}</p>
+                <p>]</p>
+              </div>
+            </div>
+            <div class="btn-out var2out" style="flex-grow: 1">
+              <div class="row2 btn-in var2in Backslash-">
+                <p>|</p>
+                <p>\</p>
+              </div>
+            </div>
+            <div class="btn-out var1out" style="margin-left: 10px">
+              <div class="row2 btn-in var1in Delete-">
+                <p>Delete</p>
+              </div>
+            </div>
+            <div class="btn-out var1out">
+              <div class="row2 btn-in var1in End-">
+                <p>End</p>
+              </div>
+            </div>
+            <div class="btn-out var1out">
+              <div class="row2 btn-in var1in PageDown-">
+                <p>PgDn</p>
+              </div>
+            </div>
+          </div>
+          <div class="row row-3">
+            <div class="btn-out var1out" style="flex-grow: 0.5">
+              <div class="row3 btn-in var1in CapsLock-">
+                <p>Caps Lock</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row3 btn-in var2in KeyA-">
+                <p>A</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row3 btn-in var2in KeyS-">
+                <p>S</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row3 btn-in var2in KeyD-">
+                <p>D</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row3 btn-in var2in KeyF-">
+                <p>F</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row3 btn-in var2in KeyG-">
+                <p>G</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row3 btn-in var2in KeyH-">
+                <p>H</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row3 btn-in var2in KeyJ-">
+                <p>J</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row3 btn-in var2in KeyK-">
+                <p>K</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row3 btn-in var2in KeyL-">
+                <p>L</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row3 btn-in var2in Semicolon-">
+                <p>:</p>
+                <p>;</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row3 btn-in var2in Quote-">
+                <p>"</p>
+                <p>'</p>
+              </div>
+            </div>
+            <div
+              class="btn-out var1out"
+              style="flex-grow: 1; margin-right: 172px"
+            >
+              <div class="Enter btn-in var1in Enter-">
+                <p>Enter</p>
+                <!-- <p>;</p> -->
+              </div>
+            </div>
+          </div>
+          <div class="row row-4">
+            <div class="btn-out var1out" style="flex-grow: 1">
+              <div class="row4 btn-in var1in ShiftLeft-">
+                <p>Shift</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row4 btn-in var2in KeyZ-">
+                <p>Z</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row4 btn-in var2in KeyX-">
+                <p>Z</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row4 btn-in var2in KeyC-">
+                <p>C</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row4 btn-in var2in KeyV-">
+                <p>V</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row4 btn-in var2in KeyB-">
+                <p>B</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row4 btn-in var2in KeyN-">
+                <p>N</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row4 btn-in var2in KeyM-">
+                <p>M</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row4 btn-in var2in Comma-">
+                <p><</p>
+                <p>,</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row4 btn-in var2in Period-">
+                <p>></p>
+                <p>.</p>
+              </div>
+            </div>
+            <div class="btn-out var2out">
+              <div class="row4 btn-in var2in Slash-">
+                <p>?</p>
+                <p>/</p>
+              </div>
+            </div>
+            <div class="btn-out var1out" style="flex-grow: 1.6">
+              <div class="row4 btn-in var1in ShiftRight-">
+                <p>Shift</p>
+              </div>
+            </div>
+            <div class="btn-out var1out" style="margin: 0 54px 0 64px">
+              <div class="row4 btn-in var1in ArrowUp-">
+                <p>↑</p>
+              </div>
+            </div>
+          </div>
+          <div class="row row-5">
+            <div class="btn-out var1out" style="flex-grow: 0.1">
+              <div class="row5 btn-in var1in ControlLeft-">
+                <p>Ctrl</p>
+              </div>
+            </div>
+            <div
+              class="btn-out var1out"
+              style="margin-left: 54px; flex-grow: 0.1"
+            >
+              <div class="row5 btn-in var1in AltLeft-">
+                <p>Alt</p>
+              </div>
+            </div>
+            <div class="btn-out var2out" style="flex-grow: 1">
+              <div class="Space btn-in var2in Space-">
+                <p>spacebar</p>
+              </div>
+            </div>
+            <div class="btn-out var1out" style="flex-grow: 0.1">
+              <div class="row5 btn-in var1in AltRight-">
+                <p>Alt</p>
+              </div>
+            </div>
+            <div
+              class="btn-out var1out"
+              style="margin-left: 54px; flex-grow: 0.1"
+            >
+              <div class="row5 btn-in var1in ControlRight-">
+                <p>Ctrl</p>
+              </div>
+            </div>
+            <div class="btn-out var1out" style="margin-left: 10px">
+              <div class="row5 btn-in var1in ArrowLeft-">
+                <p>←</p>
+              </div>
+            </div>
+            <div class="btn-out var1out">
+              <div class="row5 btn-in var1in ArrowDown-">
+                <p>↓</p>
+              </div>
+            </div>
+            <div class="btn-out var1out">
+              <div class="row5 btn-in var1in ArrowRight-">
+                <p>→</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <audio src="press/SPACE.mp3" data-key="Space"></audio>
+      <audio src="press/ENTER.mp3" data-key="Enter"></audio>
+      <audio src="press/BACKSPACE.mp3" data-key="Backspace"></audio>
+      <audio src="press/GENERIC.mp3" data-key="row0"></audio>
+      <audio src="press/GENERIC_R0.mp3" data-key="row1"></audio>
+      <audio src="press/GENERIC_R1.mp3" data-key="row2"></audio>
+      <audio src="press/GENERIC_R2.mp3" data-key="row3"></audio>
+      <audio src="press/GENERIC_R3.mp3" data-key="row4"></audio>
+      <audio src="press/GENERIC_R4.mp3" data-key="row5"></audio>
+      <audio src="release/SPACE.mp3" data-key="SpaceR"></audio>
+      <audio src="release/BACKSPACE.mp3" data-key="BackspaceR"></audio>
+      <audio src="release/ENTER.mp3" data-key="EnterR"></audio>
+      <audio src="release/GENERIC.mp3" data-key="rowR"></audio>
+      <script src="script.js"></script>
+      <div class="github">
+        <a href="#" class="git-repo">
+          <svg
+            width="64px"
+            height="64px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
               <path
-                id="Vector"
-                d="M18 15H19M9 15H15M6 15H5M5 12H19M5 9H19M2 14.8002V9.2002C2 8.08009 2 7.51962 2.21799 7.0918C2.40973 6.71547 2.71547 6.40973 3.0918 6.21799C3.51962 6 4.08009 6 5.2002 6H18.8002C19.9203 6 20.4796 6 20.9074 6.21799C21.2837 6.40973 21.5905 6.71547 21.7822 7.0918C22 7.5192 22 8.07899 22 9.19691V14.8031C22 15.921 22 16.48 21.7822 16.9074C21.5905 17.2837 21.2837 17.5905 20.9074 17.7822C20.48 18 19.921 18 18.8031 18H5.19691C4.07899 18 3.5192 18 3.0918 17.7822C2.71547 17.5905 2.40973 17.2837 2.21799 16.9074C2 16.4796 2 15.9203 2 14.8002Z"
-                stroke="#000000"
-                stroke-width="0.8640000000000001"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 2C6.475 2 2 6.475 2 12C2 16.425 4.8625 20.1625 8.8375 21.4875C9.3375 21.575 9.525 21.275 9.525 21.0125C9.525 20.775 9.5125 19.9875 9.5125 19.15C7 19.6125 6.35 18.5375 6.15 17.975C6.0375 17.6875 5.55 16.8 5.125 16.5625C4.775 16.375 4.275 15.9125 5.1125 15.9C5.9 15.8875 6.4625 16.625 6.65 16.925C7.55 18.4375 8.9875 18.0125 9.5625 17.75C9.65 17.1 9.9125 16.6625 10.2 16.4125C7.975 16.1625 5.65 15.3 5.65 11.475C5.65 10.3875 6.0375 9.4875 6.675 8.7875C6.575 8.5375 6.225 7.5125 6.775 6.1375C6.775 6.1375 7.6125 5.875 9.525 7.1625C10.325 6.9375 11.175 6.825 12.025 6.825C12.875 6.825 13.725 6.9375 14.525 7.1625C16.4375 5.8625 17.275 6.1375 17.275 6.1375C17.825 7.5125 17.475 8.5375 17.375 8.7875C18.0125 9.4875 18.4 10.375 18.4 11.475C18.4 15.3125 16.0625 16.1625 13.8375 16.4125C14.2 16.725 14.5125 17.325 14.5125 18.2625C14.5125 19.6 14.5 20.675 14.5 21.0125C14.5 21.275 14.6875 21.5875 15.1875 21.4875C17.1727 20.8173 18.8977 19.5415 20.1198 17.8395C21.3419 16.1376 21.9995 14.0953 22 12C22 6.475 17.525 2 12 2Z"
+                fill="#000000"
               ></path>
             </g>
-          </g>
-        </svg>
-      </div>
-      <p>keyboard</p>
-      <p>simulator</p>
-    </header>
-    <div class="result center">
-      <div class="timer final">
-        <div class="curr_time value">15s</div>
-        <div class="header_text feature">Time</div>
-      </div>
-      <div class="difficulty final">
-        <div class="difficulty_value value">Easy</div>
-        <div class="difficulty_text feature">Difficulty</div>
-      </div>
-      <div class="accuracy final">
-        <div class="curr_accuracy value">43.3</div>
-        <div class="accuracy_text feature">Accuracy</div>
-      </div>
-      <div class="wpm final">
-        <div class="wpm_value value">43.3</div>
-        <div class="header_text feature">WPM</div>
-      </div>
-      <div class="cpm final">
-        <div class="cpm_value value">43.3</div>
-        <div class="header_text feature">CPM</div>
-      </div>
-      <div class="keystrokes final">
-        <div class="keystroke value">
-          <span class="curr_corrects correct_char value">a</span> |
-          <span class="curr_errors incorrect_char value">b</span>
-        </div>
-        <div class="header_text feature">keystroke</div>
-      </div>
-      <div class="end">
-        <button class="end_btn" onclick="finishGame()">
-          <div class="value final">Reset</div>
-        </button>
+          </svg>
+        </a>
       </div>
     </div>
-    <!-- <div class="overlay hidden"></div> -->
-    <div class="upper center">
-      <textarea class="input_area" oninput="processCurrentText()"> </textarea>
-      <div class="start">
-        <div class="start_text middle">Click here to start</div>
-      </div>
-      <div class="typing_area blur"></div>
-    </div>
-    <hr />
-
-    <div class="customize center">
-      <div class="content">
-        <select class="option_style down" aria-label="Switch Type">
-          <option value="0" selected>NovelKeys Creams</option>
-          <option value="1">Holy Pandas</option>
-          <option value="2">Alpacas</option>
-          <option value="3">Turquoise Tealios</option>
-          <option value="4">Gateron Black Inks</option>
-          <option value="5">Gateron Red Inks</option>
-          <option value="6">Cherry MX Blacks</option>
-          <option value="7">Cherry MX Browns</option>
-          <option value="8">Cherry MX Blues</option>
-          <option value="9">Kailh Box Navies</option>
-          <option value="10">Buckling Spring</option>
-          <option value="11">SKCM Blue Alps</option>
-          <option value="12">Topre</option>
-        </select>
-      </div>
-
-      <div class="content">
-        <select class="option_style down" aria-label="Keyboard Layout">
-          <option value="0" selected>9009 WKL TKL</option>
-          <option value="1">Oblivion Fullsize</option>
-          <option value="2">Mizu KBD19X</option>
-          <option value="3">MoDo WKL TKL</option>
-          <option value="4">Dracula TKL</option>
-          <option value="5">Laser 75%</option>
-          <option value="6">Olivia WKL 75%</option>
-          <option value="7">Cafe 65%</option>
-          <option value="8">8008 WKL 65%</option>
-          <option value="9">Model M</option>
-          <option value="10">Handarbeit WKL Fullsize</option>
-          <option value="11">HHKB</option>
-        </select>
-      </div>
-      <div class="content">
-        <div class="option_style mute">Mute</div>
-      </div>
-    </div>
-    <hr />
-    <div class="outer center">
-      <div class="inner middle">
-        <div class="row row-0">
-          <div class="btn-out var1out">
-            <div class="row0 btn-in var1in Escape-">
-              <p>Esc</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var2out" style="margin-left: 54px">
-            <div class="row0 btn-in var2in F1-">
-              <p>F1</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row0 btn-in var2in F2-">
-              <p>F2</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row0 btn-in var2in F3-">
-              <p>F3</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row0 btn-in var2in F4-">
-              <p>F4</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var1out" style="margin-left: 36px">
-            <div class="row0 btn-in var1in F5-">
-              <p>F5</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var1out">
-            <div class="row0 btn-in var1in F6-">
-              <p>F6</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var1out">
-            <div class="row0 btn-in var1in F7-">
-              <p>F7</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var1out">
-            <div class="row0 btn-in var1in F8-">
-              <p>F8</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var2out" style="margin-left: 36px">
-            <div class="row0 btn-in var2in F9-">
-              <p>F9</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row0 btn-in var2in F10-">
-              <p>F10</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row0 btn-in var2in F11-">
-              <p>F11</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row0 btn-in var2in F12-">
-              <p>F12</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var1out" style="margin-left: 10px">
-            <div class="row0 btn-in var1in">
-              <p>PrtSc</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row0 btn-in var2in">
-              <p style="text-align: center">Scroll Lock</p>
-              <!-- <p>`</p> -->
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row0 btn-in var2in">
-              <p>Pause</p>
-              <p>Break</p>
-            </div>
-          </div>
-        </div>
-        <br />
-        <div class="row row-1">
-          <div class="btn-out var2out">
-            <div class="row1 btn-in var2in Backquote-">
-              <p>~</p>
-              <p>`</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row1 btn-in var2in Digit1-">
-              <p>!</p>
-              <p>1</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row1 btn-in var2in Digit2-">
-              <p>@</p>
-              <p>2</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row1 btn-in var2in Digit3-">
-              <p>#</p>
-              <p>3</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row1 btn-in var2in Digit4-">
-              <p>$</p>
-              <p>4</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row1 btn-in var2in Digit5-">
-              <p>%</p>
-              <p>5</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row1 btn-in var2in Digit6-">
-              <p>^</p>
-              <p>6</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row1 btn-in var2in Digit7-">
-              <p>&</p>
-              <p>7</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row1 btn-in var2in Digit8-">
-              <p>*</p>
-              <p>8</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row1 btn-in var2in Digit9-">
-              <p>(</p>
-              <p>9</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row1 btn-in var2in Digit0-">
-              <p>)</p>
-              <p>0</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row1 btn-in var2in Minus-">
-              <p>_</p>
-              <p>-</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row1 btn-in var2in Equal-">
-              <p>+</p>
-              <p>=</p>
-            </div>
-          </div>
-          <div class="btn-out var1out" style="flex-grow: 1">
-            <div class="Backspace btn-in var1in Backspace-">
-              <p>Backspace</p>
-            </div>
-          </div>
-          <div class="btn-out var1out" style="margin-left: 10px">
-            <div class="row1 btn-in var1in Insert-">
-              <p>Insert</p>
-            </div>
-          </div>
-          <div class="btn-out var1out">
-            <div class="row1 btn-in var1in Numpad7-">
-              <p>Home</p>
-            </div>
-          </div>
-          <div class="btn-out var1out">
-            <div class="row1 btn-in var1in PageUp-">
-              <p>PgUp</p>
-            </div>
-          </div>
-        </div>
-        <div class="row row-2">
-          <div class="btn-out var1out" style="flex-grow: 0.8">
-            <div class="row2 btn-in var1in Tab-">
-              <p>Tab</p>
-              <!-- <p>2</p> -->
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row2 btn-in var2in KeyQ-">
-              <p>Q</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row2 btn-in var2in KeyW-">
-              <p>W</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row2 btn-in var2in KeyE-">
-              <p>E</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row2 btn-in var2in KeyR-">
-              <p>R</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row2 btn-in var2in KeyT-">
-              <p>T</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row2 btn-in var2in KeyY-">
-              <p>Y</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row2 btn-in var2in KeyU-">
-              <p>U</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row2 btn-in var2in KeyI-">
-              <p>I</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row2 btn-in var2in KeyO-">
-              <p>O</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row2 btn-in var2in KeyP-">
-              <p>P</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row2 btn-in var2in BracketLeft-">
-              <p>{</p>
-              <p>[</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row2 btn-in var2in BracketRight-">
-              <p>}</p>
-              <p>]</p>
-            </div>
-          </div>
-          <div class="btn-out var2out" style="flex-grow: 1">
-            <div class="row2 btn-in var2in Backslash-">
-              <p>|</p>
-              <p>\</p>
-            </div>
-          </div>
-          <div class="btn-out var1out" style="margin-left: 10px">
-            <div class="row2 btn-in var1in Delete-">
-              <p>Delete</p>
-            </div>
-          </div>
-          <div class="btn-out var1out">
-            <div class="row2 btn-in var1in End-">
-              <p>End</p>
-            </div>
-          </div>
-          <div class="btn-out var1out">
-            <div class="row2 btn-in var1in PageDown-">
-              <p>PgDn</p>
-            </div>
-          </div>
-        </div>
-        <div class="row row-3">
-          <div class="btn-out var1out" style="flex-grow: 0.5">
-            <div class="row3 btn-in var1in CapsLock-">
-              <p>Caps Lock</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row3 btn-in var2in KeyA-">
-              <p>A</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row3 btn-in var2in KeyS-">
-              <p>S</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row3 btn-in var2in KeyD-">
-              <p>D</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row3 btn-in var2in KeyF-">
-              <p>F</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row3 btn-in var2in KeyG-">
-              <p>G</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row3 btn-in var2in KeyH-">
-              <p>H</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row3 btn-in var2in KeyJ-">
-              <p>J</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row3 btn-in var2in KeyK-">
-              <p>K</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row3 btn-in var2in KeyL-">
-              <p>L</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row3 btn-in var2in Semicolon-">
-              <p>:</p>
-              <p>;</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row3 btn-in var2in Quote-">
-              <p>"</p>
-              <p>'</p>
-            </div>
-          </div>
-          <div
-            class="btn-out var1out"
-            style="flex-grow: 1; margin-right: 172px"
-          >
-            <div class="Enter btn-in var1in Enter-">
-              <p>Enter</p>
-              <!-- <p>;</p> -->
-            </div>
-          </div>
-        </div>
-        <div class="row row-4">
-          <div class="btn-out var1out" style="flex-grow: 1">
-            <div class="row4 btn-in var1in ShiftLeft-">
-              <p>Shift</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row4 btn-in var2in KeyZ-">
-              <p>Z</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row4 btn-in var2in KeyX-">
-              <p>Z</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row4 btn-in var2in KeyC-">
-              <p>C</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row4 btn-in var2in KeyV-">
-              <p>V</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row4 btn-in var2in KeyB-">
-              <p>B</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row4 btn-in var2in KeyN-">
-              <p>N</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row4 btn-in var2in KeyM-">
-              <p>M</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row4 btn-in var2in Comma-">
-              <p><</p>
-              <p>,</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row4 btn-in var2in Period-">
-              <p>></p>
-              <p>.</p>
-            </div>
-          </div>
-          <div class="btn-out var2out">
-            <div class="row4 btn-in var2in Slash-">
-              <p>?</p>
-              <p>/</p>
-            </div>
-          </div>
-          <div class="btn-out var1out" style="flex-grow: 1.6">
-            <div class="row4 btn-in var1in ShiftRight-">
-              <p>Shift</p>
-            </div>
-          </div>
-          <div class="btn-out var1out" style="margin: 0 54px 0 64px">
-            <div class="row4 btn-in var1in ArrowUp-">
-              <p>↑</p>
-            </div>
-          </div>
-        </div>
-        <div class="row row-5">
-          <div class="btn-out var1out" style="flex-grow: 0.1">
-            <div class="row5 btn-in var1in ControlLeft-">
-              <p>Ctrl</p>
-            </div>
-          </div>
-          <div
-            class="btn-out var1out"
-            style="margin-left: 54px; flex-grow: 0.1"
-          >
-            <div class="row5 btn-in var1in AltLeft-">
-              <p>Alt</p>
-            </div>
-          </div>
-          <div class="btn-out var2out" style="flex-grow: 1">
-            <div class="Space btn-in var2in Space-">
-              <p>spacebar</p>
-            </div>
-          </div>
-          <div class="btn-out var1out" style="flex-grow: 0.1">
-            <div class="row5 btn-in var1in AltRight-">
-              <p>Alt</p>
-            </div>
-          </div>
-          <div
-            class="btn-out var1out"
-            style="margin-left: 54px; flex-grow: 0.1"
-          >
-            <div class="row5 btn-in var1in ControlRight-">
-              <p>Ctrl</p>
-            </div>
-          </div>
-          <div class="btn-out var1out" style="margin-left: 10px">
-            <div class="row5 btn-in var1in ArrowLeft-">
-              <p>←</p>
-            </div>
-          </div>
-          <div class="btn-out var1out">
-            <div class="row5 btn-in var1in ArrowDown-">
-              <p>↓</p>
-            </div>
-          </div>
-          <div class="btn-out var1out">
-            <div class="row5 btn-in var1in ArrowRight-">
-              <p>→</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <audio src="press/SPACE.mp3" data-key="Space"></audio>
-    <audio src="press/ENTER.mp3" data-key="Enter"></audio>
-    <audio src="press/BACKSPACE.mp3" data-key="Backspace"></audio>
-    <audio src="press/GENERIC.mp3" data-key="row0"></audio>
-    <audio src="press/GENERIC_R0.mp3" data-key="row1"></audio>
-    <audio src="press/GENERIC_R1.mp3" data-key="row2"></audio>
-    <audio src="press/GENERIC_R2.mp3" data-key="row3"></audio>
-    <audio src="press/GENERIC_R3.mp3" data-key="row4"></audio>
-    <audio src="press/GENERIC_R4.mp3" data-key="row5"></audio>
-    <audio src="release/SPACE.mp3" data-key="SpaceR"></audio>
-    <audio src="release/BACKSPACE.mp3" data-key="BackspaceR"></audio>
-    <audio src="release/ENTER.mp3" data-key="EnterR"></audio>
-    <audio src="release/GENERIC.mp3" data-key="rowR"></audio>
-    <script src="script.js"></script>
   </body>
 </html>
