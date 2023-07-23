@@ -300,6 +300,10 @@ body {
   border-radius: 100px;
 }
 
+.end_btn > .final {
+  color: #023047;
+}
+
 .feature,
 .value {
   text-align: center;
