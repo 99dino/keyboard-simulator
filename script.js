@@ -101,16 +101,18 @@ document.addEventListener("keydown", (e) => {
     const btn = document.querySelector(`.${e.code}-`);
     if (btn) {
       btn.classList.add("active-class");
-      for (let i = 0; i < 6; ++i) {
-        if (rows[i].includes(e.code)) {
-          const audio = document.querySelector(`audio[data-key="row${i}"]`);
-          audio.play();
-          return;
+      if (!mute) {
+        for (let i = 0; i < 6; ++i) {
+          if (rows[i].includes(e.code)) {
+            const audio = document.querySelector(`audio[data-key="row${i}"]`);
+            audio.play();
+            return;
+          }
         }
-      }
-      const audio = document.querySelector(`audio[data-key="${e.code}"]`);
-      if (audio) {
-        audio.play();
+        const audio = document.querySelector(`audio[data-key="${e.code}"]`);
+        if (audio) {
+          audio.play();
+        }
       }
     }
   }
@@ -121,17 +123,18 @@ document.addEventListener("keyup", (e) => {
   const btn = document.querySelector(`.${e.code}-`);
   if (btn) {
     btn.classList.remove("active-class");
-
-    for (let i = 0; i < 6; ++i) {
-      if (rows[i].includes(e.code)) {
-        const audio = document.querySelector(`audio[data-key="rowR"]`);
-        audio.play();
-        return;
+    if (!mute) {
+      for (let i = 0; i < 6; ++i) {
+        if (rows[i].includes(e.code)) {
+          const audio = document.querySelector(`audio[data-key="rowR"]`);
+          audio.play();
+          return;
+        }
       }
-    }
-    const audio = document.querySelector(`audio[data-key="${e.code}R"]`);
-    if (audio) {
-      audio.play();
+      const audio = document.querySelector(`audio[data-key="${e.code}R"]`);
+      if (audio) {
+        audio.play();
+      }
     }
   }
 });
@@ -139,10 +142,12 @@ document.addEventListener("keyup", (e) => {
 // On Mouse Click visual and audio effect
 document.querySelectorAll(".btn-in").forEach((btn) => {
   btn.addEventListener("click", () => {
-    const audio = document.querySelector(
-      `audio[data-key="${btn.classList[0]}"]`
-    );
-    audio.play();
+    if (!mute) {
+      const audio = document.querySelector(
+        `audio[data-key="${btn.classList[0]}"]`
+      );
+      audio.play();
+    }
   });
 });
 
@@ -665,17 +670,18 @@ const hard = [
 let timer_text = document.querySelector(".curr_time");
 let accuracy_text = document.querySelector(".curr_accuracy");
 let error_text = document.querySelector(".curr_errors");
-let cpm_text = document.querySelector(".curr_cpm");
-let wpm_text = document.querySelector(".curr_wpm");
+let correct_text = document.querySelector(".curr_corrects");
+let cpm_text = document.querySelector(".cpm_value");
+let wpm_text = document.querySelector(".wpm_value");
 let typing_text = document.querySelector(".typing_area");
 let input_area = document.querySelector(".input_area");
 let start_btn = document.querySelector(".start");
 let cpm_group = document.querySelector(".cpm");
 let wpm_group = document.querySelector(".wpm");
-let error_group = document.querySelector(".errors");
+let error_group = document.querySelector(".keystrokes");
 let accuracy_group = document.querySelector(".accuracy");
 let end = document.querySelector(".end");
-let diff_text = document.querySelector(".diff_text");
+let diff_text = document.querySelector(".difficulty_value");
 
 let timeoption = 0;
 let timeLeft = TIME_LIMIT[timeoption % 5];
@@ -689,9 +695,10 @@ let characterTyped = 0;
 let current_para = "";
 let timer = null;
 let running = 0;
+let mute = 0;
 
 document.querySelector(".start").addEventListener("click", () => {
-  document.querySelector(".typing_area").classList.remove("modal");
+  document.querySelector(".typing_area").classList.remove("blur");
   document.querySelector(".start").classList.add("hidden");
   resetValues();
 });
@@ -714,7 +721,7 @@ const updaterandompara = () => {
   // considering diffculty level and generating paragraph by taking random words from respective diffulty array
   difficulty = diff[diffopt % 3];
   current_para = "";
-  for (let i = 0; i < 30; ++i) {
+  for (let i = 0; i < 20; ++i) {
     if (difficulty === "Easy") {
       current_para += easy[Math.trunc(Math.random() * easy.length)] + " ";
     } else if (difficulty === "Medium") {
@@ -742,7 +749,6 @@ const updaterandompara = () => {
   // out of each of them to individually style them
   typing_text.textContent = null;
   display();
-  typing_text.style.wordSpacing = "10px";
 };
 
 function processCurrentText() {
@@ -773,10 +779,10 @@ function processCurrentText() {
     }
     // incorrect character
     else {
-      if (char.innerText === " ") {
-        total_errors++;
-        input_area.value = input_area.value.slice(0, -1);
-      }
+      //   if (char.innerText === " ") {
+      //     total_errors++;
+      //     input_area.value = input_area.value.slice(0, -1);
+      //   }
       char.classList.remove("no");
       char.classList.add("incorrect_char");
       char.classList.remove("correct_char");
@@ -786,28 +792,29 @@ function processCurrentText() {
   });
 
   // display the number of errors
-  //   error_text.textContent = total_errors + errors;
   // update accuracy text
   let correctCharacters = Math.max(characterTyped - (total_errors + errors), 0);
+  error_text.textContent = total_errors + errors;
+  correct_text.textContent = correctCharacters;
   let accuracyVal = (correctCharacters / characterTyped) * 100;
-  //   accuracy_text.textContent = accuracyVal.toFixed(2);
+  accuracy_text.textContent = accuracyVal.toFixed(2);
   // if current text is completely typed
   // irrespective of errors
   if (curr_input.length == current_para.length) {
-    updaterandompara();
     // update total errors
     total_errors += errors;
     // clear the input area
-    if (characterTyped > 10) {
-      input_area.value = "";
-    }
+    input_area.value = "";
+    updaterandompara();
   }
 }
 
 // game starting point
 function startGame() {
+  document.querySelector(".typing_area").classList.remove("blur");
+  document.querySelector(".start").classList.add("hidden");
   // once start typing end button appears to stop the typing tests
-  //   end.style.display = "block";
+  end.style.display = "block";
   // clear old timer
   clearInterval(timer);
   // and start a new timer
@@ -820,6 +827,7 @@ function startGame() {
 function resetValues() {
   // random paragraph generation
   updaterandompara();
+
   running = 0;
   timeElapsed = 0;
   errors = 0;
@@ -830,15 +838,16 @@ function resetValues() {
   //   accuracy_text.textContent = 100;
   // user choice of time duration and difficulty
   timeLeft = TIME_LIMIT[timeoption % 5];
-  //   timer_text.textContent = timeLeft + "s";
-  //   error_text.textContent = 0;
+  timer_text.textContent = timeLeft + "s";
+  error_text.textContent = 0;
+  correct_text.textContent = 0;
+
   // these info will be hidden at the begining
-  // error_group.style.display = "none";
-  // accuracy_group.style.display = "none";
-  //   end.style.display = "none";
-  //   restart_btn.style.display = "none";
-  //   cpm_group.style.display = "none";
-  //   wpm_group.style.display = "none";
+  error_group.style.display = "none";
+  accuracy_group.style.display = "none";
+  end.style.display = "none";
+  cpm_group.style.display = "none";
+  wpm_group.style.display = "none";
   // making input area enable and autofocusing it
   // so that when someone starts typing then only timer starts
   input_area.disabled = false;
@@ -853,7 +862,7 @@ function updateTimer() {
     // increase the time elapsed
     timeElapsed++;
     // update the timer text
-    // timer_text.textContent = timeLeft + "s";
+    timer_text.textContent = timeLeft + "s";
   } else {
     // finish the game
     finishGame();
@@ -861,37 +870,69 @@ function updateTimer() {
 }
 
 function finishGame() {
-  // stop the timer
-  clearInterval(timer);
-  // disable the input area
-  input_area.disabled = true;
-  // time spent typing
-  // same as selected and different when someone ends it manually
-  //   timer_text.textContent = `${TIME_LIMIT[timeoption % 5] - timeLeft}`;
+  if (running) {
+    // stop the timer
+    clearInterval(timer);
+    // disable the input area
+    input_area.disabled = true;
+    // time spent typing
+    // same as selected and different when someone ends it manually
+    timer_text.textContent = `${TIME_LIMIT[timeoption % 5] - timeLeft}`;
 
-  // display restart button
-  //   restart_btn.style.display = "block";
+    // display restart button
+    //   restart_btn.style.display = "block";
 
-  // calculate cpm and wpm
-  cpm = Math.round(
-    ((characterTyped - total_errors - errors) / timeElapsed) * 60
-  );
-  wpm = Math.round(
-    ((characterTyped - total_errors - errors) / 5 / timeElapsed) * 60
-  );
+    // calculate cpm and wpm
+    cpm = Math.round(
+      ((characterTyped - total_errors - errors) / timeElapsed) * 60
+    );
+    wpm = Math.round(
+      ((characterTyped - total_errors - errors) / 5 / timeElapsed) * 60
+    );
 
-  // update cpm and wpm text
-  //   cpm_text.textContent = cpm;
-  //   wpm_text.textContent = wpm;
+    // update cpm and wpm text
+    cpm_text.textContent = cpm;
+    wpm_text.textContent = wpm;
 
-  // display the error, accuracy cpm and wpm
-  //   end.style.display = "none";
-  //   error_group.style.display = "block";
-  //   accuracy_group.style.display = "block";
-  //   cpm_group.style.display = "block";
-  //   wpm_group.style.display = "block";
-  document.querySelector(".typing_area").classList.add("modal");
-  document.querySelector(".start").classList.remove("hidden");
+    // display the error, accuracy cpm and wpm
+    end.style.display = "none";
+    error_group.style.display = "block";
+    accuracy_group.style.display = "block";
+    cpm_group.style.display = "block";
+    wpm_group.style.display = "block";
+    document.querySelector(".typing_area").classList.add("blur");
+    document.querySelector(".start").classList.remove("hidden");
+  }
 }
 
+// selecting the timing option
+document.querySelector(".timer").addEventListener("click", () => {
+  if (!running) {
+    timeoption++;
+    timer_text.textContent = `${TIME_LIMIT[timeoption % 5]}s`;
+    resetValues();
+  }
+});
+
+// selecting the difficulty option
+document.querySelector(".difficulty").addEventListener("click", () => {
+  if (!running) {
+    diffopt++;
+    diff_text.textContent = `${diff[diffopt % 3]}`;
+    // updaterandompara();
+    resetValues();
+  }
+});
+
 resetValues();
+
+document.querySelector(".mute").addEventListener("click", () => {
+  mute = (mute + 1) % 2;
+  if (mute) {
+    document.querySelector(".mute").classList.add("muted");
+    document.querySelector(".mute").textContent = "Muted";
+  } else {
+    document.querySelector(".mute").textContent = "Mute";
+    document.querySelector(".mute").classList.remove("muted");
+  }
+});

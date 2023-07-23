@@ -11,16 +11,150 @@
       href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 2;
+      }
+    </style>
   </head>
   <body>
+    <header class="center header">
+      <div class="icon">
+        <svg
+          width="64px"
+          height="64px"
+          viewBox="-2.4 -2.4 28.80 28.80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          transform="rotate(0)"
+          stroke="#ffffff"
+        >
+          <g
+            id="SVGRepo_bgCarrier"
+            stroke-width="0"
+            transform="translate(0,0), scale(1)"
+          >
+            <rect
+              x="-2.4"
+              y="-2.4"
+              width="28.80"
+              height="28.80"
+              rx="14.4"
+              fill="#7ed0ec"
+              strokewidth="0"
+            ></rect>
+          </g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="#CCCCCC"
+            stroke-width="0.672"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <g id="System / Keyboard">
+              <path
+                id="Vector"
+                d="M18 15H19M9 15H15M6 15H5M5 12H19M5 9H19M2 14.8002V9.2002C2 8.08009 2 7.51962 2.21799 7.0918C2.40973 6.71547 2.71547 6.40973 3.0918 6.21799C3.51962 6 4.08009 6 5.2002 6H18.8002C19.9203 6 20.4796 6 20.9074 6.21799C21.2837 6.40973 21.5905 6.71547 21.7822 7.0918C22 7.5192 22 8.07899 22 9.19691V14.8031C22 15.921 22 16.48 21.7822 16.9074C21.5905 17.2837 21.2837 17.5905 20.9074 17.7822C20.48 18 19.921 18 18.8031 18H5.19691C4.07899 18 3.5192 18 3.0918 17.7822C2.71547 17.5905 2.40973 17.2837 2.21799 16.9074C2 16.4796 2 15.9203 2 14.8002Z"
+                stroke="#000000"
+                stroke-width="0.8640000000000001"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <p>keyboard</p>
+      <p>simulator</p>
+    </header>
+    <div class="result center">
+      <div class="timer final">
+        <div class="curr_time value">15s</div>
+        <div class="header_text feature">Time</div>
+      </div>
+      <div class="difficulty final">
+        <div class="difficulty_value value">Easy</div>
+        <div class="difficulty_text feature">Difficulty</div>
+      </div>
+      <div class="accuracy final">
+        <div class="curr_accuracy value">43.3</div>
+        <div class="accuracy_text feature">Accuracy</div>
+      </div>
+      <div class="wpm final">
+        <div class="wpm_value value">43.3</div>
+        <div class="header_text feature">WPM</div>
+      </div>
+      <div class="cpm final">
+        <div class="cpm_value value">43.3</div>
+        <div class="header_text feature">CPM</div>
+      </div>
+      <div class="keystrokes final">
+        <div class="keystroke value">
+          <span class="curr_corrects correct_char value">a</span> |
+          <span class="curr_errors incorrect_char value">b</span>
+        </div>
+        <div class="header_text feature">keystroke</div>
+      </div>
+      <div class="end">
+        <button class="end_btn" onclick="finishGame()">
+          <div class="value final">Reset</div>
+        </button>
+      </div>
+    </div>
+    <!-- <div class="overlay hidden"></div> -->
     <div class="upper center">
       <textarea class="input_area" oninput="processCurrentText()"> </textarea>
       <div class="start">
         <div class="start_text middle">Click here to start</div>
       </div>
-      <div class="typing_area modal"></div>
+      <div class="typing_area blur"></div>
     </div>
     <hr />
+
+    <div class="customize center">
+      <div class="content">
+        <select class="option_style down" aria-label="Switch Type">
+          <option value="0" selected>NovelKeys Creams</option>
+          <option value="1">Holy Pandas</option>
+          <option value="2">Alpacas</option>
+          <option value="3">Turquoise Tealios</option>
+          <option value="4">Gateron Black Inks</option>
+          <option value="5">Gateron Red Inks</option>
+          <option value="6">Cherry MX Blacks</option>
+          <option value="7">Cherry MX Browns</option>
+          <option value="8">Cherry MX Blues</option>
+          <option value="9">Kailh Box Navies</option>
+          <option value="10">Buckling Spring</option>
+          <option value="11">SKCM Blue Alps</option>
+          <option value="12">Topre</option>
+        </select>
+      </div>
+
+      <div class="content">
+        <select class="option_style down" aria-label="Keyboard Layout">
+          <option value="0" selected>9009 WKL TKL</option>
+          <option value="1">Oblivion Fullsize</option>
+          <option value="2">Mizu KBD19X</option>
+          <option value="3">MoDo WKL TKL</option>
+          <option value="4">Dracula TKL</option>
+          <option value="5">Laser 75%</option>
+          <option value="6">Olivia WKL 75%</option>
+          <option value="7">Cafe 65%</option>
+          <option value="8">8008 WKL 65%</option>
+          <option value="9">Model M</option>
+          <option value="10">Handarbeit WKL Fullsize</option>
+          <option value="11">HHKB</option>
+        </select>
+      </div>
+      <div class="content">
+        <div class="option_style mute">Mute</div>
+      </div>
+    </div>
     <hr />
     <div class="outer center">
       <div class="inner middle">
