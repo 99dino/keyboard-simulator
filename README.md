@@ -7,3 +7,21 @@ Currently, it supports single switch and keyboard layouts, and colors for an cus
 - 1 minute English typing test
 - Wide selection of case colors and layouts
 - (Dark mode) - to be implemented soon 
+
+## Currently Supported Switches
+- NovelKeys Creams
+- Holy Pandas
+- Turqoise Tealios
+- Gateron Black Inks
+- Cherry MX Blacks
+- Cherry MX Browns
+- Kailh Box Navies
+- Buckling Spring
+- SKCM Blue Alps
+- Topre
+
+## Currently Supported Layouts
+- Tenkeyless
+- 75%
+- 65%
+- (full size layout) - to be implemented soon
