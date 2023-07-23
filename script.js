@@ -92,13 +92,36 @@ const rows = [
   ],
 ];
 
+const switches = document.querySelector(".switch");
+const layouts = document.querySelector(".layout");
+let curr = "NovelKeys-Creams";
+let currl = "WKL-TKL-9009outer";
+
+switches.addEventListener("change", () => {
+  const audiotype = document.querySelectorAll("audio");
+  switches.blur();
+  audiotype.forEach((btn) => {
+    btn.src = btn.src.replace(`${curr}`, switches.value);
+  });
+  curr = switches.value;
+});
+
+layouts.addEventListener("change", () => {
+  layouts.blur();
+  document.querySelector(`.${currl}`).classList.add("hidden");
+  currl = layouts.value;
+  document.querySelector(`.${currl}`).classList.remove("hidden");
+});
+
 // On Key Down visual and audio effect
 document.addEventListener("keydown", (e) => {
   if (!e.repeat) {
     if (e.code === "Escape") {
       finishGame();
     }
-    const btn = document.querySelector(`.${e.code}-`);
+    const btn = document
+      .querySelector(`.${currl}`)
+      .querySelector(`.${e.code}-`);
     if (btn) {
       btn.classList.add("active-class");
       if (!mute) {
@@ -120,7 +143,7 @@ document.addEventListener("keydown", (e) => {
 
 // on Key Up visual and audio effect
 document.addEventListener("keyup", (e) => {
-  const btn = document.querySelector(`.${e.code}-`);
+  const btn = document.querySelector(`.${currl}`).querySelector(`.${e.code}-`);
   if (btn) {
     btn.classList.remove("active-class");
     if (!mute) {
@@ -931,24 +954,4 @@ document.querySelector(".mute").addEventListener("click", () => {
     document.querySelector(".mute").textContent = "Mute";
     document.querySelector(".mute").classList.remove("muted");
   }
-});
-
-const switches = document.querySelector(".switch");
-const layouts = document.querySelector(".layout");
-let curr = "NovelKeys-Creams";
-let currl = "WKL-TKL-9009outer";
-
-switches.addEventListener("change", () => {
-  const audiotype = document.querySelectorAll("audio");
-
-  audiotype.forEach((btn) => {
-    btn.src = btn.src.replace(`${curr}`, switches.value);
-  });
-  curr = switches.value;
-});
-
-layouts.addEventListener("change", () => {
-  document.querySelector(`.${currl}`).classList.add("hidden");
-  currl = layouts.value;
-  document.querySelector(`.${currl}`).classList.remove("hidden");
 });
