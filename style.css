@@ -182,7 +182,7 @@ body {
 .option_style.down {
   border: 2px solid #616161;
   /* border: none; */
-  background-image: url(expand-dark.png);
+  background-image: url(img/expand-dark.png);
 }
 
 .option_style {
