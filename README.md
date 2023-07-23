@@ -25,3 +25,11 @@ Currently, it supports single switch and keyboard layouts, and colors for an cus
 - 75%
 - 65%
 - (full size layout) - to be implemented soon
+
+## Setup
+To run this application locally, use:
+
+```bash
+npm install
+npm start
+```
