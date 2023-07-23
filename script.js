@@ -235,7 +235,6 @@ const easy = [
   "towards",
   "entire",
   "world",
-  "—",
   "above,",
   "below,",
   "across",
@@ -932,4 +931,17 @@ document.querySelector(".mute").addEventListener("click", () => {
     document.querySelector(".mute").textContent = "Mute";
     document.querySelector(".mute").classList.remove("muted");
   }
+});
+
+const switches = document.querySelector(".switch");
+const layouts = document.querySelector(".layout");
+let curr = "NovelKeys-Creams";
+
+switches.addEventListener("change", () => {
+  const audiotype = document.querySelectorAll("audio");
+
+  audiotype.forEach((btn) => {
+    btn.src = btn.src.replace(`${curr}`, switches.value);
+  });
+  curr = switches.value;
 });
