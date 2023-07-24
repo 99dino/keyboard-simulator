@@ -949,7 +949,7 @@ document.querySelector(".mute").addEventListener("click", () => {
   mute = (mute + 1) % 2;
   if (mute) {
     document.querySelector(".mute").classList.add("muted");
-    document.querySelector(".mute").textContent = "Muted";
+    document.querySelector(".mute").textContent = "Unmute";
   } else {
     document.querySelector(".mute").textContent = "Mute";
     document.querySelector(".mute").classList.remove("muted");
