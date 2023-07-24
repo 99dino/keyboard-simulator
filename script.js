@@ -100,6 +100,8 @@ let currl = "WKL-TKL-9009outer";
 switches.addEventListener("change", () => {
   const audiotype = document.querySelectorAll("audio");
   switches.blur();
+  input_area.focus();
+
   audiotype.forEach((btn) => {
     btn.src = btn.src.replace(`${curr}`, switches.value);
   });
@@ -108,6 +110,8 @@ switches.addEventListener("change", () => {
 
 layouts.addEventListener("change", () => {
   layouts.blur();
+  input_area.focus();
+
   document.querySelector(`.${currl}`).classList.add("hidden");
   currl = layouts.value;
   document.querySelector(`.${currl}`).classList.remove("hidden");
@@ -947,6 +951,8 @@ resetValues();
 
 document.querySelector(".mute").addEventListener("click", () => {
   mute = (mute + 1) % 2;
+  input_area.focus();
+
   if (mute) {
     document.querySelector(".mute").classList.add("muted");
     document.querySelector(".mute").textContent = "Unmute";
