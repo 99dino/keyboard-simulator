@@ -150,19 +150,30 @@ body {
 
 /* keyboard 1 */
 .var1out {
-  background-color: #bcb59f;
+  background-color: #d0b33c;
 }
 
 .var1in {
-  background-color: #cec7ae;
+  background-color: #e0c145;
 }
 
 .var2out {
-  background-color: #ddd7cb;
+  background-color: #c9cab7;
 }
 
 .var2in {
-  background-color: #f3ecdf;
+  background-color: #d4d6c2;
+}
+
+.var0out {
+  background-color: #525555;
+  background-color: #82878d;
+  /* background-color: #515459; */
+}
+.var0in {
+  background-color: #606161;
+  background-color: #8f949b;
+  background-color: #595c61;
 }
 
 /* keyboard 2 */
@@ -189,11 +200,11 @@ body {
 .var5in {
   background-color: #e1345f;
 }
+
+/* keyboard 3 */
 .vard1out {
   background-color: #bd93f9;
 }
-
-/* keyboard 3 */
 .vard1in {
   background-color: #cfa1ff;
 }
