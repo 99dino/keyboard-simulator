@@ -13,7 +13,7 @@ body {
   height: 100%;
 }
 
-.WKL-TKL-9009outer {
+.WKL_TKL_9009outer {
   /* display: none; */
   cursor: default;
   color: black;
@@ -25,15 +25,15 @@ body {
   position: relative;
 }
 
-.WKL-TKL-9009inner {
+.WKL_TKL_9009inner {
   /* background-color: #262626; */
   width: 1000px;
 }
-.WKL-TKL-9009inner p {
+.WKL_TKL_9009inner p {
   color: black;
 }
 
-.MoDo-WKL-TKLouter {
+.MoDo_WKL_TKLouter {
   /* display: none; */
   cursor: default;
   color: white;
@@ -49,11 +49,11 @@ body {
   position: relative;
 }
 
-.Modo-WKL-TKLinner {
+.Modo_WKL_TKLinner {
   /* background-color: #262626; */
   width: 1000px;
 }
-.Modo-WKL-TKLinner p {
+.Modo_WKL_TKLinner p {
   color: #eee;
 }
 
