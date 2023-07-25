@@ -57,6 +57,23 @@ body {
   color: #eee;
 }
 
+.Dracula_TKLouter {
+  cursor: default;
+  color: black;
+  background: linear-gradient(137deg, #b6bab9 0%, #b2b2b2 75%);
+  width: 1020px;
+  height: 380px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.Dracula_TKLinner {
+  width: 1000px;
+}
+.Dracula_TKLinner p {
+  color: white;
+}
+
 .center {
   margin: 0 auto;
 }
@@ -135,6 +152,53 @@ body {
 
 .var5in {
   background-color: #e87487;
+}
+.vard1out {
+  background-color: #bd93f9;
+}
+
+.vard1in {
+  background-color: #cfa1ff;
+}
+
+.vard2out {
+  background-color: #44475a;
+}
+
+.vard2in {
+  background-color: #4a4e63;
+}
+
+.vard3out {
+  background-color: #282a36;
+}
+
+.vard3in {
+  background-color: #2c2e3b;
+}
+
+.vard4out {
+  background-color: #ff79c6;
+}
+
+.vard4in {
+  background-color: #ff85d9;
+}
+
+.vard5out {
+  background-color: #f8f8f2;
+}
+
+.vard5in {
+  background-color: #ffffff;
+}
+
+.vard6out {
+  background-color: #8be9fd;
+}
+
+.vard6in {
+  background-color: #98ffff;
 }
 
 .btn-in:hover {
