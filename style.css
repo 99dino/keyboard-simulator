@@ -14,19 +14,16 @@ body {
 }
 
 .WKL_TKL_9009outer {
-  /* display: none; */
   cursor: default;
   color: black;
   background: linear-gradient(137deg, #b6bab9 0%, #b2b2b2 75%);
   width: 1020px;
   height: 380px;
   border-radius: 10px;
-  /* border: 2px solid red; */
   position: relative;
 }
 
 .WKL_TKL_9009inner {
-  /* background-color: #262626; */
   width: 1000px;
 }
 .WKL_TKL_9009inner p {
@@ -34,9 +31,8 @@ body {
 }
 
 .MoDo_WKL_TKLouter {
-  /* display: none; */
   cursor: default;
-  color: white;
+  /* color: white; */
   background: linear-gradient(
     137deg,
     rgb(182, 186, 185) 0%,
@@ -50,11 +46,10 @@ body {
 }
 
 .Modo_WKL_TKLinner {
-  /* background-color: #262626; */
   width: 1000px;
 }
 .Modo_WKL_TKLinner p {
-  color: #eee;
+  color: white;
 }
 
 .Dracula_TKLouter {
