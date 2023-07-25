@@ -33,10 +33,10 @@ Currently, it supports single switch and keyboard layouts, and colors for an cus
 
 ![Layout Looks](/img/Layouts.png)
 
-- WKL TKL
 - Tenkeyless
 - 75%
 - 65%
+- HHKB
 - (full size layout) - to be implemented soon
 
 ## Setup
