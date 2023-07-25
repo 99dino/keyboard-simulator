@@ -69,6 +69,46 @@ body {
   color: white;
 }
 
+.Laser_75outer {
+  cursor: default;
+  color: black;
+  background: linear-gradient(137deg, #b6bab9 0%, #b2b2b2 75%);
+  width: 890px;
+  height: 360px;
+  border-radius: 10px;
+  position: relative;
+}
+.Laser_75outer .row {
+  width: 864px;
+}
+
+.Laser_75inner {
+  width: 864px;
+}
+.Laser_75inner p {
+  color: white;
+}
+
+.Olivia_WKL_75outer {
+  cursor: default;
+  color: black;
+  background: linear-gradient(137deg, #b6bab9 0%, #b2b2b2 75%);
+  width: 890px;
+  height: 360px;
+  border-radius: 10px;
+  position: relative;
+}
+.Olivia_WKL_75outer .row {
+  width: 864px;
+}
+
+.Olivia_WKL_75inner {
+  width: 864px;
+}
+.Olivia_WKL_75inner p {
+  color: black;
+}
+
 .center {
   margin: 0 auto;
 }
@@ -108,6 +148,7 @@ body {
   justify-content: space-evenly;
 }
 
+/* keyboard 1 */
 .var1out {
   background-color: #bcb59f;
 }
@@ -142,16 +183,17 @@ body {
 }
 
 .var5out {
-  background-color: #d36a7b;
+  background-color: #ce335a;
 }
 
 .var5in {
-  background-color: #e87487;
+  background-color: #e1345f;
 }
 .vard1out {
   background-color: #bd93f9;
 }
 
+/* keyboard 3 */
 .vard1in {
   background-color: #cfa1ff;
 }
@@ -194,6 +236,56 @@ body {
 
 .vard6in {
   background-color: #98ffff;
+}
+
+/* keyboard 4 */
+.varl1out {
+  background-color: #ce234e;
+}
+
+.varl1in {
+  background-color: #e22655;
+}
+
+.varl2out {
+  background-color: #2f1c75;
+}
+
+.varl2in {
+  background-color: #331e80;
+}
+
+.varl3out {
+  background-color: #26204b;
+}
+
+.varl3in {
+  background-color: #292352;
+}
+
+/* keyboard 5 */
+.varo1out {
+  background-color: #f1beb0;
+}
+
+.varo1in {
+  background-color: #ffd1c1;
+}
+
+.varo2out {
+  background-color: #e1dbd1;
+}
+
+.varo2in {
+  background-color: #f7f0e5;
+}
+
+.varo3out {
+  background-color: #2b2b2b;
+}
+
+.varo3in {
+  background-color: #2f2f2f;
 }
 
 .btn-in:hover {
