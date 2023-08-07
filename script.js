@@ -976,3 +976,7 @@ document.querySelector(".mute").addEventListener("click", () => {
     document.querySelector(".mute").classList.remove("muted");
   }
 });
+
+document.querySelector(".icon").addEventListener("click", () => {
+  window.location.reload();
+});

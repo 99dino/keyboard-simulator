@@ -13,82 +13,6 @@ body {
   height: 100%;
 }
 
-.WKL_TKL_9009outer {
-  cursor: default;
-  color: black;
-  background: linear-gradient(137deg, #b6bab9 0%, #b2b2b2 75%);
-  width: 1020px;
-  height: 380px;
-  border-radius: 10px;
-  position: relative;
-}
-
-.WKL_TKL_9009inner {
-  width: 1000px;
-}
-.WKL_TKL_9009inner p {
-  color: black;
-}
-
-.MoDo_WKL_TKLouter {
-  cursor: default;
-  /* color: white; */
-  background: linear-gradient(
-    137deg,
-    rgb(182, 186, 185) 0%,
-    rgb(178, 178, 178) 75%
-  );
-  width: 1020px;
-  height: 380px;
-  border-radius: 10px;
-  /* border: 2px solid red; */
-  position: relative;
-}
-
-.Modo_WKL_TKLinner {
-  width: 1000px;
-}
-.Modo_WKL_TKLinner p {
-  color: white;
-}
-
-.Dracula_TKLouter {
-  cursor: default;
-  color: black;
-  background: linear-gradient(137deg, #b6bab9 0%, #b2b2b2 75%);
-  width: 1020px;
-  height: 380px;
-  border-radius: 10px;
-  position: relative;
-}
-
-.Dracula_TKLinner {
-  width: 1000px;
-}
-.Dracula_TKLinner p {
-  color: white;
-}
-
-.Laser_75outer {
-  cursor: default;
-  color: black;
-  background: linear-gradient(137deg, #b6bab9 0%, #b2b2b2 75%);
-  width: 890px;
-  height: 360px;
-  border-radius: 10px;
-  position: relative;
-}
-.Laser_75outer .row {
-  width: 864px;
-}
-
-.Laser_75inner {
-  width: 864px;
-}
-.Laser_75inner p {
-  color: white;
-}
-
 .Olivia_WKL_75outer {
   cursor: default;
   color: black;
@@ -107,6 +31,30 @@ body {
 }
 .Olivia_WKL_75inner p {
   color: black;
+}
+
+.MoDo_WKL_TKLouter {
+  /* display: none; */
+  cursor: default;
+  color: white;
+  background: linear-gradient(
+    137deg,
+    rgb(182, 186, 185) 0%,
+    rgb(178, 178, 178) 75%
+  );
+  width: 1020px;
+  height: 380px;
+  border-radius: 10px;
+  /* border: 2px solid red; */
+  position: relative;
+}
+
+.Modo_WKL_TKLinner {
+  /* background-color: #262626; */
+  width: 1000px;
+}
+.Modo_WKL_TKLinner p {
+  color: #eee;
 }
 
 .center {
@@ -148,81 +96,28 @@ body {
   justify-content: space-evenly;
 }
 
-/* keyboard 1 */
-.var1out {
-  background-color: #d0b33c;
+.varo1out {
+  background-color: #f1beb0;
 }
 
-.var1in {
-  background-color: #e0c145;
+.varo1in {
+  background-color: #ffd1c1;
 }
 
-.var2out {
-  background-color: #c9cab7;
+.varo2out {
+  background-color: #e1dbd1;
 }
 
-.var2in {
-  background-color: #d4d6c2;
+.varo2in {
+  background-color: #f7f0e5;
 }
 
-.var0out {
-  background-color: #525555;
-  background-color: #82878d;
-  /* background-color: #515459; */
-}
-.var0in {
-  background-color: #606161;
-  background-color: #8f949b;
-  background-color: #595c61;
+.varo3out {
+  background-color: #2b2b2b;
 }
 
-/* keyboard 2 */
-.var3out {
-  background-color: #515459;
-}
-
-.var3in {
-  background-color: #595c61;
-}
-
-.var4out {
-  background-color: #82878d;
-}
-
-.var4in {
-  background-color: #8f949b;
-}
-
-.var5out {
-  background-color: #ce335a;
-}
-
-.var5in {
-  background-color: #e1345f;
-}
-
-/* keyboard 3 */
-.vard1out {
-  background-color: #bd93f9;
-}
-.vard1in {
-  background-color: #cfa1ff;
-}
-
-.vard2out {
-  background-color: #44475a;
-}
-
-.vard2in {
-  background-color: #4a4e63;
-}
-
-.vard3out {
-  background-color: #282a36;
-}
-
-.vard3in {
-  background-color: #2c2e3b;
+.varo3in {
+  background-color: #2f2f2f;
 }
 
 .vard4out {
@@ -247,56 +142,6 @@ body {
 
 .vard6in {
   background-color: #98ffff;
-}
-
-/* keyboard 4 */
-.varl1out {
-  background-color: #ce234e;
-}
-
-.varl1in {
-  background-color: #e22655;
-}
-
-.varl2out {
-  background-color: #2f1c75;
-}
-
-.varl2in {
-  background-color: #331e80;
-}
-
-.varl3out {
-  background-color: #26204b;
-}
-
-.varl3in {
-  background-color: #292352;
-}
-
-/* keyboard 5 */
-.varo1out {
-  background-color: #f1beb0;
-}
-
-.varo1in {
-  background-color: #ffd1c1;
-}
-
-.varo2out {
-  background-color: #e1dbd1;
-}
-
-.varo2in {
-  background-color: #f7f0e5;
-}
-
-.varo3out {
-  background-color: #2b2b2b;
-}
-
-.varo3in {
-  background-color: #2f2f2f;
 }
 
 .btn-in:hover {
@@ -427,11 +272,6 @@ body {
   border: 2px solid #616161;
 
   /* background-color: red; */
-}
-
-.mute:hover {
-  cursor: pointer;
-  /* background-color: white; */
 }
 
 .muted {
